@@ -1,0 +1,18 @@
+<!-- maybe figure out how to track their location instead?-->
+<!-- First Question Container for endpint.category-->
+<div class="form-control">
+    What type of food are you in the mood for?
+
+    <label class="label" for="categories">
+    <input id="categories" [(ngModel)]="category"  type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+    </label>    
+    <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button>
+</div>
+
+
+<div>
+What area would you like to get back an answer from?
+
+<input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Responsive</button>
+</div>
