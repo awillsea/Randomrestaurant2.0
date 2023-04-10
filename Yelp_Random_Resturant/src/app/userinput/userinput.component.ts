@@ -25,4 +25,11 @@ addCategories(){
 addLocation(){
   console.log(this.userLocation)
 }
+addEndPoint(){
+ console.log(this.userCategory)
+ console.log(this.userLocation)
+
+
+
+}
 }

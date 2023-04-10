@@ -6,15 +6,16 @@
     <label class="label" for="categories">
     <input id="categories" [(ngModel)]="userCategory"  type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
     </label>    
-    <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button>
-</div>
+    <!-- <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button> -->
+<br>
 
-
-<div class="form-control">
 What area would you like to get back an answer from?
 <label class="label" for="location">
 <input id="location" [(ngModel)]="userLocation" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
 </label>    
+<!-- <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button> -->
+<br>
 
-<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button>
+<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addEndPoint()">Submit</button>
+
 </div>
