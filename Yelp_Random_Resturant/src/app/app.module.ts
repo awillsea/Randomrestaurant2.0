@@ -5,11 +5,13 @@ import {HttpInterceptor} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserinputComponent } from './userinput/userinput.component';
+import { RestaurantComponent } from './restaurant/restaurant.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserinputComponent
+    UserinputComponent,
+    RestaurantComponent
   ],
   imports: [
     BrowserModule,
