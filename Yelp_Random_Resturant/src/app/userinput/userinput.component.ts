@@ -15,11 +15,14 @@ export class UserinputComponent {
   offSet:0,
   limit:0,
 }
-category:string= "";
+userCategory:string= "";
+userLocation:string="";
 addCategories(){
   
 //  cat = this.userEndPoints.categories
- console.log(this.category)
+ console.log(this.userCategory)
 }
-
+addLocation(){
+  console.log(this.userLocation)
+}
 }

@@ -4,15 +4,17 @@
     What type of food are you in the mood for?
 
     <label class="label" for="categories">
-    <input id="categories" [(ngModel)]="category"  type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+    <input id="categories" [(ngModel)]="userCategory"  type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
     </label>    
     <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button>
 </div>
 
 
-<div>
+<div class="form-control">
 What area would you like to get back an answer from?
+<label class="label" for="location">
+<input id="location" [(ngModel)]="userLocation" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
+</label>    
 
-<input type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Responsive</button>
+<button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button>
 </div>
