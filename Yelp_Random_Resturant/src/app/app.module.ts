@@ -6,12 +6,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserinputComponent } from './userinput/userinput.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
+import { RandomselectionComponent } from './randomselection/randomselection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserinputComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    RandomselectionComponent
   ],
   imports: [
     BrowserModule,
