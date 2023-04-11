@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserinputComponent } from './userinput/userinput.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
