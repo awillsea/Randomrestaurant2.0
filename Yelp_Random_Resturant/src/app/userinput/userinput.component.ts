@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Output,Input,EventEmitter } from '@angular/core';
 import { EndPoints,FinalEndPoint } from '../end-point';
 
 
@@ -25,11 +25,15 @@ addCategories(){
 addLocation(){
   console.log(this.userLocation)
 }
+@Output() sendEndPoint:EventEmitter<EndPoints> = new EventEmitter<EndPoints>();
 addEndPoint(){
- console.log(this.userCategory)
- console.log(this.userLocation)
-
-
+ let newEndPoint: EndPoints ={
+  location:this.userLocation,
+  categories:this.userCategory,
+  offSet:0,
+  limit:0
+ }
+ this.sendEndPoint.emit(newEndPoint);
 
 }
 }

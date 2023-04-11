@@ -1,1 +1,20 @@
-<p>restaurant works!</p>
+<app-userinput (sendEndPoint)="CreateUsersEndPoint($event)"></app-userinput>
+
+
+
+<div *ngFor="let b of listOfBusinesses">
+   
+        {{b.name}}
+    
+</div>
+
+
+<div class="button-container">
+<button (click)="getRandomRestaurant(APIEndPoint)">
+CLICK ME
+</button>
+<button (click)="addMoreBusinesses()">
+Add More to the list!
+</button>
+</div>
+
