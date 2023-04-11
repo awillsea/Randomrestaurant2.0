@@ -8,13 +8,13 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     styled: true,
-    themes: ["synthwave"],
+    themes: ["lemonade","synthwave"],
     base: true,
     utils: true,
     logs: true,
     rtl: false,
     prefix: "",
-    darkTheme: "dark",
+    darkTheme: "dark",  
   },
 }
 
