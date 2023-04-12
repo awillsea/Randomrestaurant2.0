@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { UserinputComponent } from './userinput/userinput.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
 import { RandomselectionComponent } from './randomselection/randomselection.component';
-import { IntroAnimationComponent } from './intro-animation/intro-animation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, HostBinding } from '@angular/core';
 import {
@@ -26,7 +25,6 @@ import {
     UserinputComponent,
     RestaurantComponent,
     RandomselectionComponent,
-    IntroAnimationComponent,
   ],
   imports: [
     BrowserModule,
