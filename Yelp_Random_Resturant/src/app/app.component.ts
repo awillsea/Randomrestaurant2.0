@@ -8,7 +8,7 @@ import { EndPoints,FinalEndPoint } from './end-point';
 import { style, transition, trigger,animate, state, } from '@angular/animations';
 import { fade } from './animations/fadeAnimation';
 import {fader, slider, stepper, transformers} from './animations/routeAnimations'
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,Router } from '@angular/router';
 
 
 @Component({
@@ -17,13 +17,17 @@ import { RouterOutlet } from '@angular/router';
   styleUrls: ['./app.component.css'],
   animations:[
     //fade,
-    //fader,
+    fader,
     //slider,
     //transformers
-    stepper],
+    //stepper
+  ],
   
 })
 export class AppComponent  {
+  constructor(public router:Router){
+    
+  }
  prepareRoute(outlet:RouterOutlet){
   return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animation']
  }

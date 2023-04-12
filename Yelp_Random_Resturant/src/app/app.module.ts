@@ -19,6 +19,8 @@ import {
 } from '@angular/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { LandingheroComponent } from './landinghero/landinghero.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { LandingheroComponent } from './landinghero/landinghero.component';
     RestaurantComponent,
     RandomselectionComponent,
     LandingheroComponent,
+    NavbarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

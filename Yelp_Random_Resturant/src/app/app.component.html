@@ -1,34 +1,12 @@
 
-<!-- <div >
-<h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
 
-<app-restaurant ></app-restaurant>
-</div> -->
 
-<!-- <div class="hero " style="background-image: url(/images/stock/photo-1507358522600-9f71e620c44e.jpg);">
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-center text-neutral-content">
-    <div class="max-w-md">
-      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-      <p class="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button  [routerLink]="'input'"class="btn btn-primary">TEST</button>
-    </div>
-  </div>
-</div> -->
-<nav class="navbar">
-  <div class="navbar-start">
-<button [routerLink]="'input'" class="btn">TEST to User Input</button>
-</div>
-<div class="navbar-center">
-<button [routerLink]="'hero'" class="btn">TEST to hero</button>
-</div>
-<div class="navbar-end">
-<button [routerLink]="'restaurant'" class="btn">TEST to Restaurant Component</button>
-</div>
-</nav>
+<!-- <ng-container *ngIf="router.url != '/hero'">
+<app-navbar></app-navbar>
+</ng-container> -->
+  <!-- <app-navbar></app-navbar> -->
+
 <main [@routeAnimations]="prepareRoute(outlet)" class="h-screen bg-primary position:relative">
- 
   <router-outlet #outlet="outlet"></router-outlet>
 </main>
+<!-- <a href='hero'>Landing page</a> -->
