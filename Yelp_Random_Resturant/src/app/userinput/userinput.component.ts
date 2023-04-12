@@ -7,8 +7,11 @@ import { EndPoints,FinalEndPoint } from '../end-point';
   templateUrl: './userinput.component.html',
   styleUrls: ['./userinput.component.css']
 })
-export class UserinputComponent {
+export class UserinputComponent implements OnInit {
 
+  ngOnInit(): void {
+      
+  }
   userEndPoints: EndPoints = {
   location:"",
   categories:"",

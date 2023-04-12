@@ -17,6 +17,8 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { LandingheroComponent } from './landinghero/landinghero.component';
 
 
 @NgModule({
@@ -25,12 +27,14 @@ import {
     UserinputComponent,
     RestaurantComponent,
     RandomselectionComponent,
+    LandingheroComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
 
   ],
   providers: [],
