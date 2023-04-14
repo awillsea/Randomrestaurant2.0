@@ -1,8 +1,13 @@
-<app-navbar>
 
-</app-navbar>
-<div [@routeAnimations]="prepareRoute(outlet2)">
-<router-outlet  #outlet2="outlet" name="router2">
+
+<div [@routeAnimations]="prepareRoute(outlet2)" class="">
+    <app-navbar>
+
+    </app-navbar>
+    <router-outlet #outlet2="outlet" name="router2" >
+    </router-outlet>
     
-</router-outlet>
 </div>
+
+<!-- [@routeAnimations]="prepareRoute(outlet2)" -->
+<!-- #outlet2="outlet" name="router2" -->

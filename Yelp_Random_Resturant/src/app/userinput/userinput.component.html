@@ -1,26 +1,41 @@
-
 <!-- maybe figure out how to track their location instead?-->
 <!-- First Question Container for endpint.category-->
-<div class="form-control bg-warning">
-    What type of food are you in the mood for?
+<div class="form-control bg-warning flex flex-col place-items-center text-center">
+    <div>
+  Food Category
 
-    <label class="label" for="categories">
-    <input id="categories" [(ngModel)]="userCategory"  type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
-    </label>    
-    <!-- <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button> -->
-<br>
-
-What area would you like to get back an answer from?
-<label class="label" for="location">
-<input id="location" [(ngModel)]="userLocation" type="text" placeholder="Type here" class="input input-bordered w-full max-w-xs" />
-</label>    
-<!-- <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button> -->
-<br>
-<!-- <button class="btn bg-warning">Button</button> -->
-<button class="btn btn-info btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addEndPoint()">Submit</button>
-
-
+  <label class="label" for="categories">
+    <input
+      id="categories"
+      [(ngModel)]="userCategory"
+      type="text"
+      placeholder="Mexican/Pizza/Wine"
+      class="input input-bordered input-primary w-full max-w-xs text-center"
+    />
+  </label>
 </div>
-
-
-
+  <!-- <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button> -->
+  <br />
+<div>
+  Location
+  <label class="label" for="location">
+    <input
+      id="location"
+      [(ngModel)]="userLocation"
+      type="text"
+      placeholder="San Diego/Arizona/NY"
+      class="input input-bordered w-full max-w-xs text-center"
+    />
+  </label>
+</div>
+  <!-- <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button> -->
+  <br />
+  <!-- <button class="btn bg-warning">Button</button> -->
+  <button
+    class="btn btn-info btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+    (click)="addEndPoint()"
+  >
+    Submit
+  </button>
+</div>
+<app-randomselection></app-randomselection>

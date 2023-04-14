@@ -13,7 +13,6 @@ const routes: Routes = [
     {path:'',component: UserinputComponent, outlet:'router2',  data:{animation:'isRight'}},
     {path:'restaurant',component: RestaurantComponent, outlet:'router2',   data:{animation:'isRight'}},
   ]},
-
 {path:'', redirectTo:'/hero',pathMatch:'full'},
 {path:'hero', component:LandingheroComponent, data:{animation:'isRight'}},
   
