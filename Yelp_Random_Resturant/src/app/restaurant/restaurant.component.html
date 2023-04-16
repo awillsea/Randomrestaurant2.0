@@ -1,12 +1,12 @@
-<!-- <app-userinput (sendEndPoint)="CreateUsersEndPoint($event)"></app-userinput> -->
+<app-userinput (sendEndPoint)="CreateUsersEndPoint($event)"></app-userinput>
 
 
 
 
-<div class="text-5xl text-center">
+<!-- <div class="text-5xl text-center">
 CAN YOU SEE ME
-</div>
-
+</div> -->
+<app-randomselection></app-randomselection>
 
 <div *ngFor="let b of listOfBusinesses">
    
@@ -15,13 +15,13 @@ CAN YOU SEE ME
 </div>
 
 
-<!-- <div class="button-container " >
+ <!-- <div class="button-container " >
 <button (click)="getRandomRestaurant(APIEndPoint)" class="bg-primary">
 CLICK ME
-</button>
+</button>  -->
 
-<button (click)="addMoreBusinesses()"   >
+<!-- <button (click)="addMoreBusinesses()"   >
 Add More to the list!
 </button>
-</div> -->
+</div>  -->
 
