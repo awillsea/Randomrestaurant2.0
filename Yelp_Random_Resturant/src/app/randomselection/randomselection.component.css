@@ -1,0 +1,9 @@
+.restaurant {
+    background: var(--clr);
+    transform-origin:bottom right;
+    transform: rotate(calc(36deg * var(--i)));
+    clip-path: polygon(0 0, 50% 0, 100% 100%, 0 50%);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

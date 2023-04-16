@@ -1,6 +1,6 @@
 import { style, transition, trigger,animate, state } from '@angular/animations';
 
-export let fade = 
+export const fade = 
     //trigger()<- the first param is what we will call when wanting to use our animation
     trigger('fade',[
       // now we are defining what are animation will do when called with the @fade in the html portion

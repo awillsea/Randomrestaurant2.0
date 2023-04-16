@@ -1,24 +1,26 @@
-<div class="flex justify-center place-items-center min-h-screen">
-<div class="container relative w-80 h-80 bg-neutral-content flex justify-items-center flex-col place-items-center">
-    <div class="w-16 h-16 absolute bottom-36 z-10">
-        <button class="btn-circle btn-lg bg-secondary text-sm">Spin The Wheel</button>
-    </div>
-    <div class="bg-red-500 w-5 h-8 absolute top-20 "style="clip-path: polygon(50% 0%, 15% 100%, 85% 100%);">
+<div class=" bg-base-300 flex justify-center  place-items-center min-h-screen">
+
+<div  class="container  relative w-80 h-80  flex  justify-center  place-items-center">
+    <!-- <div class="w-32 h-16 absolute flex  z-10"> -->
+        <button  (click)="rotate()" class=" spinBtn btn-circle btn-lg bg-secondary text-sm border-4 border-solid border-transparent absolute  justify-center  items-center z-40">Spin The Wheel</button>
+    <!-- </div>(click)="spinThis()"   -->
+    <div class="bg-red-500 w-5 h-8 absolute mt-2 top-24 z-30  "style="clip-path: polygon(50% 0%, 15% 100%, 85% 100%);">
         ''
     </div>
-    <div class="wheel absolute top-0 left-0 bg-yellow-500 w-full h-full rounded-full overflow-hidden">
-        <div class="restaurant absolute w-2/4 h-2/4 " style="--i:1;--clr:#db7093" [style]="">1</div>
-        <div class="restaurant absolute w-2/4 h-2/4  ">2</div>
-        <div class="restaurant absolute w-2/4 h-2/4  ">3</div>
-        <div class="restaurant absolute w-2/4 h-2/4  ">4</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">5</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">6</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">7</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">8</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">9</div>
-        <div class="restaurant absolute w-2/4 h-2/4 ">10</div>
+    <div [@spinTheWheel]="state"  class="wheel absolute top-0 left-0 w-full h-full bg-base-300 ring-2 ring-red-500 rounded-full shadow-inner shadow-xl overflow-hidden ">
+        <!-- absolute top-0 left-0 bg-yellow-500 w-full h-full rounded-full overflow-hidden-->
+        <div style="--i:1;--clr:#db7093" class="restaurant absolute w-2/4 h-2/4"  ><div class="relative rotate-[36deg] text-xl text-white">1</div></div>
+        <div style="--i:2;--clr:#20b2aa" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white" >2</div></div>
+        <div style="--i:3;--clr:#d63e92" class="restaurant absolute w-2/4 h-2/4  "><div class="relative rotate-[36deg] text-xl text-white" >3</div></div>
+        <div style="--i:4;--clr:#daa520" class="restaurant absolute w-2/4 h-2/4  "><div class="relative rotate-[36deg] text-xl text-white" >4</div></div>
+        <div style="--i:5;--clr:#ff340f" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white" >5</div></div>
+        <div style="--i:6;--clr:#ff7f50" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white" >6</div></div>
+        <div style="--i:7;--clr:orange" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white" >7</div></div>
+        <div style="--i:8;--clr:teal" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white" >8</div></div>
+        <div style="--i:9;--clr:yellow" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white">9</div></div>
+        <div style="--i:10;--clr:purple" class="restaurant absolute w-2/4 h-2/4 "><div class="relative rotate-[36deg] text-xl text-white">10</div></div>
     </div>
-
+<!--absolute w-2/4 h-2/4-->
 
 
 </div>
