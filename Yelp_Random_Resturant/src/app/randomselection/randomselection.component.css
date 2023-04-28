@@ -1,9 +1,14 @@
 .restaurant {
     background: var(--clr);
     transform-origin:bottom right;
-    transform: rotate(calc(36deg * var(--i)));
-    clip-path: polygon(0 0, 50% 0, 100% 100%, 0 50%);
+    transform: rotate(calc(18deg * var(--i)));
+    clip-path: polygon(0 0, 25% 0, 100% 100%, 0 25%);
     display:flex;
     justify-content: center;
     align-items: center;
+}
+.restaurant div{
+    position: relative;
+    transform: rotate(45deg);
+    filter:blur(2px)
 }
