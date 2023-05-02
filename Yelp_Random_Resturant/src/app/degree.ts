@@ -1,1 +1,3 @@
-export const degOfState = ''
+export interface rotatedDeg {
+    degree:number;
+}

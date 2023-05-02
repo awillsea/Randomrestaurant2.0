@@ -10,5 +10,5 @@
 .restaurant div{
     position: relative;
     transform: rotate(45deg);
-    filter:blur(2px)
+    /* filter:blur(2px) */
 }

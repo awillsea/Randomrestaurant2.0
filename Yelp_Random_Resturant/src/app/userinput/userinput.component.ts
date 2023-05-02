@@ -29,6 +29,7 @@ addLocation(){
   console.log(this.userLocation)
 }
 @Output() sendEndPoint:EventEmitter<EndPoints> = new EventEmitter<EndPoints>();
+
 addEndPoint(){
  let newEndPoint: EndPoints ={
   location:this.userLocation,

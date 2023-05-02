@@ -1,9 +1,10 @@
-import { Component,OnInit,Input } from '@angular/core';
+import { Component,OnInit,Input,Output,EventEmitter,OnChanges,SimpleChange, SimpleChanges } from '@angular/core';
 import { Business } from '../yelp-info';
 import {  spinTheWheel,  } from '../animations/rotate';
 import { fade } from '../animations/fadeAnimation';
-import { AnimationMetadataType } from '@angular/animations';
+import { AnimationMetadataType, style } from '@angular/animations';
 import { defaultDegree,rotatedDegree } from '../animations/rotate';
+import { rotatedDeg } from '../degree';
 @Component({
   selector: 'app-randomselection',
   templateUrl: './randomselection.component.html',
@@ -16,16 +17,22 @@ import { defaultDegree,rotatedDegree } from '../animations/rotate';
 })
 export class RandomselectionComponent implements OnInit {
 @Input() listOfBiz:Business[] = [];
-theRestaurant:string = '';
+@Input() theWinningIndex:number = 0;
+winningDeg:number = 0;
+winningDegStyleParam:string = ''
+ngOnChanges(changes: SimpleChanges){
+console.log(changes)
+this.winningDeg = (this.theWinningIndex * 18) +  383
+this.winningDegStyleParam = `rotate(${this.winningDeg}deg)`
+
+}
+ theRestaurant:string = '';
 constructor(){
   
 }
 indexStyle(i:number){
   let colorIndex = i;
-  // if(colorIndex > 4 ){
-  //   let randomNum = Math.floor(Math.random()*4)
-  //   colorIndex = randomNum
-  // }
+
   let color = '';
 
   if(colorIndex % 2 == 0){
@@ -34,93 +41,74 @@ indexStyle(i:number){
     color = "orange"
   }
 let WheelStyle = `--i:${i+1};--clr:${color}`
-  
-
-  
-  
-  
-
 return WheelStyle;
-
 }
-
-
 
 ngOnInit(): void {
-    let wheel = document.querySelector('.wheel');
-    let spin = document.querySelector('.spinBtn');
-    let value = Math.floor(Math.random() * 3600 + 180);
+
 }
 state:string = 'default';
-lastState:string = 'rotated1';
-startingPoint:DOMRect | undefined = undefined;
-FindTheWinner(){
 
-  let pinOnWheel = document.querySelector('.restaurant');
-  let pinRect = pinOnWheel?.getBoundingClientRect();
-  console.log(pinOnWheel)
+finishDeg:number =0;
   
-  console.log(pinRect?.top,pinRect?.bottom,pinRect?.left,pinRect?.right)
-  let winner = document.querySelector('.restaurant')
-  let winnerRect = winner?.getBoundingClientRect();
-  console.log(winnerRect?.top,winnerRect?.bottom,winnerRect?.left,winnerRect?.right)
-  return pinRect
-  }
-  defaultDegree:number = 0;
-  rotatedDefault:number =0;
 rotate() {
-  
-  let value = Math.floor(Math.random() * 10);
+ console.log(this.winningDeg)
   this.state = (this.state === 'default' ? `rotated` : `default`);
-  console.log(defaultDegree);
-  console.log(rotatedDegree)
-  // if(this.state === this.lastState){
-  //   console.log(`The last state and current state are the same. The LastState is ${this.lastState} The CurrentState is ${this.state} and the random Value is ${value}`)
-  //   if(value >= 0 && value < 10){
-  //     this.state=`rotated${value+1}`
-  //   }
-  //   else{
-  //     this.state=`rotated${value-1}`
-  //   }
-  // }
-  // this.lastState = this.state;
-  
-  
-  this.startingPoint = this.FindTheWinner();
+
+
 }
 animStart(){
 console.log('start')
-let randomNum = Math.floor(Math.random() * 20);
-this.theRestaurant = this.listOfBiz[randomNum].name;
+console.log(this.winningDeg)
+console.log(`this is hopefully the degree of the winner ${this.listOfBiz[this.theWinningIndex].name} ${this.winningDeg}`) 
+
 }
+popupModalOpen:boolean = false;
+// checked:boolean = true;
 animEnd(){
+  this.theRestaurant = this.listOfBiz[this.theWinningIndex].name;
 console.log('end')
+console.log(`The Top Starting Point ${document.getElementById('num0')?.innerHTML}`)
+// let newName = this.listOfBiz[this.theWinningIndex].name
+// let parentDiv = document.getElementById(`num${this.theWinningIndex}`)
+// console.log(parentDiv?.innerHTML)
+// // let p = document.createElement('p');
+// // p.textContent = newName;
+// let newText = parentDiv?.firstChild;
+// newText!.textContent = newName;
+// // console.log(newText)
+// parentDiv!.firstChild!.textContent = newName
+// parentDiv!.getElementsByTagName('div')[0].style.filter = 'blur(0px)';
 
-let winner = document.querySelector('.restaurant')
-  let winnerRect = winner?.getBoundingClientRect();
-  // console.log(winnerRect?.top,winnerRect?.bottom,winnerRect?.left,winnerRect?.right)
-  // console.log(winner)
-  let num = 20;
-let x = 0;
-// let divTest:any = undefined;
-// let p;
-// divTest = window.getComputedStyle((<any>p) = document.querySelector(`.restaurant`)).rotate
-// console.log('style test below')
 
-// console.log(divTest) 
-while(x<=num){
-winner = document.querySelector(`.num${x}`);
-console.log(winner)
 
-x++;
+ 
+let delayPopupModal = setTimeout(()=>{
+  this.popupModalOpen = true;
+  console.log('timer')
+clearInterval(delayPopupModal);
 
-}
-console.log('///////')
-// console.log(this.startingPoint?.top,this.startingPoint?.bottom,this.startingPoint?.left,this.startingPoint?.right)
-console.log(this.startingPoint?.x,this.startingPoint?.y)
-
-}
-
+},1000)
 
 
 }
+showWheel(){
+  this.popupModalOpen = false;
+  console.log('modal closing')
+
+}
+// blurEffect(){
+//   if(this.popupModalOpen){
+//     return {["filter:blur(2px)"]:["blur(2px)"]}
+//   }else{
+//     return {["filter:blur(1px)"]:["blur(1px)"]}
+   
+//   }
+// }
+
+
+}
+
+
+
+

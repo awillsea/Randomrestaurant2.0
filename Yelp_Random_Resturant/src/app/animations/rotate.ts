@@ -9,14 +9,19 @@ import {
     keyframes,
     state
 } from '@angular/animations'
-import { degOfState } from '../degree';
+// import { degOfState } from '../degree';
 import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 export let defaultDegree = 0;
 export let rotatedDegree = 0;
+import { rotatedDeg } from '../degree';
+import { Input } from '@angular/core';
 export const spinTheWheel = 
     trigger('spinTheWheel',[
-    state('default', style({ transform: defaultDegValue() })),
-    state('rotated', style({ transform: rotatedDegValue() })),
+    // state('default', style({  transform: '{{rotateDegree}}' }),
+    // {params:{rotateDegree:'360deg'}}),
+    state('default', style({ transform: 'rotate(0deg)' })),
+    state('rotated', style({  transform: '{{rotateDegree}}' }),
+    {params:{rotateDegree:'rotate(180deg)'}}),
     // state('rotated2', style({ transform: `rotate(${degValue()}deg)`})),
     // state('rotated3', style({ transform: `rotate(${degValue()}deg)`})),
     // state('rotated4', style({ transform: `rotate(${degValue()}deg)`})),
@@ -47,6 +52,8 @@ export const spinTheWheel =
 
 }
 function rotatedDegValue(){
+    console.log('the next number should be 100')
+    console.log()
     let value = Math.ceil(Math.random()* 3600 );
     
     let posOrNeg = Math.floor(Math.random()*2);

@@ -1,4 +1,4 @@
-import { Component,OnInit,OnDestroy } from '@angular/core';
+import { Component,OnInit,OnDestroy,Output,EventEmitter } from '@angular/core';
 import { Yelpinfo,Business } from '../yelp-info';
 import { YelpServiceService } from '../yelp-service.service';
 import { Observable, of, Subscription } from 'rxjs';
@@ -15,6 +15,8 @@ export class RestaurantComponent implements OnInit,OnDestroy {
   constructor(private YelpSrv:YelpServiceService){
 
   }
+@Output() sendDegree:EventEmitter<Business> = new EventEmitter<Business>();
+
   YelpInfo:Yelpinfo = {
     businesses:[]
   }
@@ -59,6 +61,21 @@ export class RestaurantComponent implements OnInit,OnDestroy {
 }
   batchOfBusinesses:Business[] = [];
   listOfBusinesses:Business[] = [];
+  winningBiz:Business ={
+    id: "",
+    name: "",
+    imageUrl: "",
+    is_closed: false,
+    url: "",
+    review_count: 0,
+    categories: [],
+    rating: 0,
+    price: "",
+    phone: "",
+    display_phone: "",
+    distance: 0,
+  };
+  winningIndex:number =0;
   getRandomRestaurant(apiendpoint:string){
     
     if(apiendpoint == "" ){
@@ -78,6 +95,9 @@ export class RestaurantComponent implements OnInit,OnDestroy {
   this.listOfBusinesses = this.YelpInfo.businesses
     })
   }
+  let randomNum = Math.floor(Math.random() * 20)
+  let winner = this.listOfBusinesses[randomNum]
+  this.winningIndex = randomNum
 }
   addMoreBusinesses(){
     // remember to look into changing end point from isndie function since its a member variable 
