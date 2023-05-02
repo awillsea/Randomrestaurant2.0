@@ -1,6 +1,6 @@
 <!-- maybe figure out how to track their location instead?-->
 <!-- First Question Container for endpint.category-->
-<div class="form-control bg-warning flex flex-col place-items-center text-center">
+<div class="form-control  flex flex-col place-items-center text-center">
     <div>
   Food Category
 
@@ -24,7 +24,7 @@
       [(ngModel)]="userLocation"
       type="text"
       placeholder="San Diego/Arizona/NY"
-      class="input input-bordered w-full max-w-xs text-center"
+      class="input input-bordered input-primary w-full max-w-xs text-center"
     />
   </label>
 </div>
@@ -32,7 +32,7 @@
   <br />
   <!-- <button class="btn bg-warning">Button</button> -->
   <button
-    class="btn btn-info btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+    class="btn btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg"
     (click)="addEndPoint()"
   >
     Submit

@@ -5,6 +5,9 @@ import { fade } from '../animations/fadeAnimation';
 import { AnimationMetadataType, style } from '@angular/animations';
 import { defaultDegree,rotatedDegree } from '../animations/rotate';
 import { rotatedDeg } from '../degree';
+import { Subject, interval, window } from 'rxjs';
+
+
 @Component({
   selector: 'app-randomselection',
   templateUrl: './randomselection.component.html',
@@ -21,9 +24,8 @@ export class RandomselectionComponent implements OnInit {
 winningDeg:number = 0;
 winningDegStyleParam:string = ''
 ngOnChanges(changes: SimpleChanges){
-console.log(changes)
+
 this.winningDeg = (this.theWinningIndex * 18) +  383
-this.winningDegStyleParam = `rotate(${this.winningDeg}deg)`
 
 }
  theRestaurant:string = '';
@@ -36,9 +38,9 @@ indexStyle(i:number){
   let color = '';
 
   if(colorIndex % 2 == 0){
-    color = "blue"
+    color = "gray"
   }else{
-    color = "orange"
+    color = "green"
   }
 let WheelStyle = `--i:${i+1};--clr:${color}`
 return WheelStyle;
@@ -48,18 +50,34 @@ ngOnInit(): void {
 
 }
 state:string = 'default';
-
+defaultState:boolean = true;
 finishDeg:number =0;
-  
-rotate() {
- console.log(this.winningDeg)
-  this.state = (this.state === 'default' ? `rotated` : `default`);
+spinButtonCounter:number = 0;
 
+
+rotate() {
+console.log(this.winningDeg)
+console.log(this.state)
+
+console.log(this.state)
+console.log(this.spinButtonCounter)
+if(this.state === 'default' && this.spinButtonCounter > 0 ){
+  let randomNum = Math.floor(Math.random() * 20)
+  this.theWinningIndex = randomNum;
+  console.log("the new winning index is " + this.theWinningIndex)
+}
+this.state = (this.state === 'default' ? `rotated` : `default`);
+this.winningDeg = (this.theWinningIndex * 18) +  383
+console.log(this.winningDeg)
+
+this.winningDegStyleParam = `rotate(${this.winningDeg}deg)`
+
+
+this.spinButtonCounter++;
 
 }
 animStart(){
 console.log('start')
-console.log(this.winningDeg)
 console.log(`this is hopefully the degree of the winner ${this.listOfBiz[this.theWinningIndex].name} ${this.winningDeg}`) 
 
 }
@@ -68,43 +86,29 @@ popupModalOpen:boolean = false;
 animEnd(){
   this.theRestaurant = this.listOfBiz[this.theWinningIndex].name;
 console.log('end')
-console.log(`The Top Starting Point ${document.getElementById('num0')?.innerHTML}`)
-// let newName = this.listOfBiz[this.theWinningIndex].name
-// let parentDiv = document.getElementById(`num${this.theWinningIndex}`)
-// console.log(parentDiv?.innerHTML)
-// // let p = document.createElement('p');
-// // p.textContent = newName;
-// let newText = parentDiv?.firstChild;
-// newText!.textContent = newName;
-// // console.log(newText)
-// parentDiv!.firstChild!.textContent = newName
-// parentDiv!.getElementsByTagName('div')[0].style.filter = 'blur(0px)';
-
-
-
- 
+if(this.state === 'rotated'){
 let delayPopupModal = setTimeout(()=>{
   this.popupModalOpen = true;
   console.log('timer')
 clearInterval(delayPopupModal);
 
-},1000)
+},900)
+}else{
+  console.log('modal no show up ')
+}
+let delaySpinButtonState = setTimeout(()=>{
+  this.defaultState =!this.defaultState;
+  clearInterval(delaySpinButtonState);
 
+},1000)
 
 }
 showWheel(){
+  
   this.popupModalOpen = false;
   console.log('modal closing')
 
 }
-// blurEffect(){
-//   if(this.popupModalOpen){
-//     return {["filter:blur(2px)"]:["blur(2px)"]}
-//   }else{
-//     return {["filter:blur(1px)"]:["blur(1px)"]}
-   
-//   }
-// }
 
 
 }

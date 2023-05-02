@@ -30,6 +30,7 @@ addLocation(){
 }
 @Output() sendEndPoint:EventEmitter<EndPoints> = new EventEmitter<EndPoints>();
 
+// @Output() sendShowWheel:EventEmitter<boolean> = new EventEmitter<boolean>();
 addEndPoint(){
  let newEndPoint: EndPoints ={
   location:this.userLocation,
@@ -37,7 +38,10 @@ addEndPoint(){
   offSet:0,
   limit:0
  }
- this.sendEndPoint.emit(newEndPoint);
+ this.sendEndPoint.emit(newEndPoint)
+console.log('inside submit button')
+
+
 
 }
 }

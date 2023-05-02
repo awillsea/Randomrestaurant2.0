@@ -107,7 +107,7 @@ export class RestaurantComponent implements OnInit,OnDestroy {
   }
 
 
-
+showWheel:boolean = false;
   CreateUsersEndPoint(userEndPoint:EndPoints){
     console.log("inside the EventEmitter in CreatUsersEndPoint Function")
     console.log(this.APIEndPoint)
@@ -115,7 +115,9 @@ export class RestaurantComponent implements OnInit,OnDestroy {
       this.APIEndPoint = `location=${userEndPoint.location}&categories=${userEndPoint.categories}`
     }
     this.getRandomRestaurant(this.APIEndPoint)
+    this.showWheel = true;
     console.log(this.APIEndPoint)
-
+    // this.showWheel = showWheel;
+    // console.log(this.showWheel)
   }
 }

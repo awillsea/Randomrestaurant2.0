@@ -11,7 +11,8 @@ import { RouterOutlet,Router } from '@angular/router';
     //fader,
     //slider,
     //transformers
-    stepper],
+    //stepper
+  ],
 })
 export class HomeComponent {
   constructor(public router:Router){

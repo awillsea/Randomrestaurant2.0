@@ -33,7 +33,9 @@ export const spinTheWheel =
     // state('rotated10', style({ transform:`rotate(${degValue()}deg)`})),
     // transition('rotated => default', animate('1500ms ease-out')),
     // transition('default => rotated', animate('1500ms ease-in'))
-    transition('* => *',animate('3000ms ease-in-out'))
+    transition('default => rotated',animate('3000ms ease-in-out')),
+    transition('rotated => *',animate('3000ms ease-in-out'))
+
     ])
     function defaultDegValue(){
     let value = Math.ceil(Math.random()* 3600 );

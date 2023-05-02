@@ -23,7 +23,7 @@ import { spinTheWheel } from './animations/rotate';
     //slider,
     //transformers
     //stepper
-    spinTheWheel
+    //spinTheWheel
     
     //   // Each unique animation requires its own trigger. The first argument of the trigger function is the name
     //   trigger('rotatedState', [

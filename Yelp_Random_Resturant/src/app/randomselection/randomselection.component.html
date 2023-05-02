@@ -1,22 +1,20 @@
 
-<!-- <ng-container *ngFor="let b of listOfBiz">
-{{b.name}}
-</ng-container> -->
+
 <div [ngStyle]="{'filter':popupModalOpen ? 'blur(2px)' : 'none'}">
 
-<div class=" bg-base-300 flex justify-center  place-items-center min-h-screen">
+<div class="  flex justify-center  place-items-center min-h-screen">
 
 <div  class="container  relative w-96 h-96  flex  justify-center  place-items-center">
     <!-- <div class="w-32 h-16 absolute flex  z-10"> -->
-        <button  (click)="rotate()" class=" spinBtn btn-circle btn-lg bg-secondary text-sm border-4 border-solid border-transparent absolute  justify-center  items-center z-40">Spin The Wheel</button>
+        <button  (click)="rotate()" class=" spinBtn btn-circle btn-lg bg-accent text-sm border-4 border-solid border-transparent absolute  justify-center  items-center z-40"><ng-container *ngIf="defaultState">Spin The Wheel</ng-container><ng-container *ngIf="!defaultState">Reset Wheel</ng-container></button>
     <!-- </div>(click)="spinThis()"   -->
     <div class="pin bg-red-500 w-5 h-8 absolute mt-2 top-32 z-30  "  style="clip-path: polygon(50% 0%, 15% 100%, 85% 100%);">
         ''
     </div>
-    <div [@spinTheWheel]="{value:state,params:{rotateDegree: winningDegStyleParam }}" (@spinTheWheel.start)="animStart()" (@spinTheWheel.done)="animEnd()"  class="wheel absolute top-0 left-0 w-full h-full bg-base-300 ring-2 ring-red-500 rounded-full shadow-inner shadow-xl overflow-hidden ">
+    <div [@spinTheWheel]="{value:state,params:{rotateDegree: winningDegStyleParam }}" (@spinTheWheel.start)="animStart()" (@spinTheWheel.done)="animEnd()"  class="wheel absolute top-0 left-0 w-full h-full bg-base-300 ring-4 ring-red-500 rounded-full shadow-inner shadow-xl overflow-hidden ">
        
         <ng-container *ngFor="let b of listOfBiz.slice().reverse() let i = index">
-            <div [style]="indexStyle(i+1)" id="num{{i}}" class="  restaurant absolute w-2/4 h-2/4 "  ><div class=" text-center text-sm text-white  ">{{b.name}}{{i+1}}</div></div> 
+            <div [style]="indexStyle(i+1)" id="num{{i}}" class="  restaurant absolute w-2/4 h-2/4 "  ><div class=" text-center text-sm text-white  ">{{b.name}}</div></div> 
             </ng-container>
             
     </div>
@@ -25,18 +23,15 @@
 </div>
 </div>
 <ng-container *ngIf="popupModalOpen">
-<!-- The button to open modal -->
-<!-- <label for="my-modal" class="btn">open modal</label> -->
 
-<!-- Put this part before </body> tag -->
 <input checked={true} type="checkbox" id="my-modal" class="modal-toggle" />
 <div class="modal">
-  <div class="modal-box">
-    <div class=" text-lg bg-primary-content text-center mt-6" >
+  <div class="modal-box border-4 border-accent">
+    <div class=" text-lg text-primary-content text-center mt-6 " >
         The Winner is! {{theRestaurant}}
         </div>
     <div class="modal-action">
-      <label for="my-modal" class="btn" (click)="showWheel()">Yay!</label>
+      <label for="my-modal" class="btn text-secondary" (click)="showWheel()">Yay!</label>
     </div>
   </div>
 </div>

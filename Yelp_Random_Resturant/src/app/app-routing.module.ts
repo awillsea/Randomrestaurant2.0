@@ -10,8 +10,8 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {path:'home',component:HomeComponent, data:{animation:'isLeft'},children:[
     {path:'input', component: UserinputComponent, outlet:'router2',  data:{animation:'isLeft'}},
-    {path:'',component: UserinputComponent, outlet:'router2',  data:{animation:'isRight'}},
-    {path:'restaurant',component: RestaurantComponent, outlet:'router2',   data:{animation:'isRight'}},
+    {path:'user',component: UserinputComponent, outlet:'router2',  data:{animation:'isRight'}},
+    {path:'',component: RestaurantComponent, outlet:'router2',   data:{animation:'isRight'}},
   ]},
 {path:'', redirectTo:'/hero',pathMatch:'full'},
 {path:'hero', component:LandingheroComponent, data:{animation:'isRight'}},

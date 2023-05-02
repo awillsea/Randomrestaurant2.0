@@ -1,11 +1,11 @@
-<nav class="navbar">
-  <div class="navbar-start">
+<nav class="navbar ">
+  <!-- <div class="navbar-start">
 <button [routerLink]="[{outlets:{router2:['input']}}]" class="btn">TEST to User Input</button>
+</div> -->
+<div class="navbar-center ">
+<button [routerLink]="'/hero'" routerLinkActive  #hero="routerLinkActive"  class="btn text-primary">TEST to hero</button>
 </div>
-<div class="navbar-center">
-<button [routerLink]="'/hero'" routerLinkActive  #hero="routerLinkActive"  class="btn">TEST to hero</button>
-</div>
-<div class="navbar-end">
+<!-- <div class="navbar-end">
 <button [routerLink]="[{outlets:{router2:['restaurant']}}]" class="btn">TEST to Restaurant Component</button>
-</div>
+</div> -->
 </nav>
