@@ -3,6 +3,7 @@ import { Yelpinfo,Business } from '../yelp-info';
 import { YelpServiceService } from '../yelp-service.service';
 import { Observable, of, Subscription } from 'rxjs';
 import { EndPoints } from '../end-point';
+import { LocationService } from '../location.service';
 
 
 @Component({
@@ -11,9 +12,9 @@ import { EndPoints } from '../end-point';
   styleUrls: ['./restaurant.component.css']
 })
 export class RestaurantComponent implements OnInit,OnDestroy {
-
+ip:string = '';
   constructor(private YelpSrv:YelpServiceService){
-
+   
   }
 @Output() sendDegree:EventEmitter<Business> = new EventEmitter<Business>();
 
@@ -26,9 +27,10 @@ export class RestaurantComponent implements OnInit,OnDestroy {
     imageUrl: "",
     is_closed: false,
     url: "",
-    review_count: 0,
+    reviewCount: 0,
     categories: [],
     rating: 0,
+    transactions: [],
     price: "",
     phone: "",
     display_phone: "",
@@ -38,7 +40,8 @@ export class RestaurantComponent implements OnInit,OnDestroy {
     location: "",
     categories:"",
     offSet:0,
-    limit:0
+    limit:0,
+    price:[]
 
   }
   APIEndPoint: string = "";
@@ -67,18 +70,37 @@ export class RestaurantComponent implements OnInit,OnDestroy {
     imageUrl: "",
     is_closed: false,
     url: "",
-    review_count: 0,
+    reviewCount: 0,
     categories: [],
     rating: 0,
+    transactions: [],
     price: "",
     phone: "",
     display_phone: "",
     distance: 0,
   };
   winningIndex:number =0;
+
+
+  showWheel:boolean = false;
+  CreateUsersEndPoint(userEndPoint:EndPoints){
+    
+    if(userEndPoint.price.length === 0){
+      this.APIEndPoint = `location=${userEndPoint.location}&categories=${userEndPoint.categories}`
+    }else{
+      this.APIEndPoint = `location=${userEndPoint.location}&categories=${userEndPoint.categories}&price=${userEndPoint.price.length}`
+    }
+    this.getRandomRestaurant(this.APIEndPoint)
+    this.showWheel = true;
+    console.log(this.APIEndPoint)
+    
+    // this.showWheel = showWheel;
+    // console.log(this.showWheel)
+  }
+
   getRandomRestaurant(apiendpoint:string){
     
-    if(apiendpoint == "" ){
+    if(apiendpoint === "" ){
     console.log("Inside IF statement")
     this.yelpSubscription = this.YelpSrv.GetByCategory(`location=az&categories=mexican`).subscribe(result=>{
       console.log(result);
@@ -107,17 +129,5 @@ export class RestaurantComponent implements OnInit,OnDestroy {
   }
 
 
-showWheel:boolean = false;
-  CreateUsersEndPoint(userEndPoint:EndPoints){
-    console.log("inside the EventEmitter in CreatUsersEndPoint Function")
-    console.log(this.APIEndPoint)
-    if(userEndPoint.offSet == 0 || userEndPoint.limit == 0){
-      this.APIEndPoint = `location=${userEndPoint.location}&categories=${userEndPoint.categories}`
-    }
-    this.getRandomRestaurant(this.APIEndPoint)
-    this.showWheel = true;
-    console.log(this.APIEndPoint)
-    // this.showWheel = showWheel;
-    // console.log(this.showWheel)
-  }
+
 }

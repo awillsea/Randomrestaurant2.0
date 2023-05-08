@@ -1,0 +1,39 @@
+
+<input checked={true} type="checkbox" id="my-modal" class="modal-toggle " />
+<div class="modal ">
+  <div class="modal-box border-4 border-accent flex flex-col justify-start">
+    <div class=" text-lg text-primary-content text-center mt-6   " >
+        The Winner is<br>
+        <div class="text-6xl text-primary ">
+         {{finalBizInfo.name}}<br>
+        </div>   
+         <img class="relative w-2/4 h-2/3 left-1/4  " src="{{finalBizInfo.imageUrl}}">
+          <div id="ratingRadio" class="rating rating-lg rating-half">
+            <input type="radio"  name="rating-10" class="rating-hidden" />
+            <input type="radio" id="1" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-1" />
+            <input type="radio" id="2" name="rating-10" class=" star bg-green-500 mask mask-star-2 mask-half-2" />
+            <input type="radio" id="3" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-1" />
+            <input type="radio" id="4" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-2" />
+            <input type="radio" id="5" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-1" />
+            <input type="radio" id="6" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-2" />
+            <input type="radio" id="7" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-1" />
+            <input type="radio" id="8" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-2" />
+            <input type="radio" id="9" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-1"  />
+            <input type="radio" id="10" name="rating-10" class="star bg-green-500 mask mask-star-2 mask-half-2" />
+          </div> <br>
+          <div class="text-primary-content">
+        Reviews: {{finalBizInfo.reviewCount}}<br>
+        Phone: {{formattedPhoneNumber}}<br>
+        Price: {{finalBizInfo.price}}<br>
+        <a href="{{finalBizInfo.url}}" class=" underline underline-offset-4
+        ">Yelp Page</a> <br>
+          </div>
+      
+
+        </div>
+       
+    <div class="modal-action">
+      <label for="my-modal" class="btn text-secondary" (click)="closePopupModal()" >Yay!</label>
+    </div>
+  </div>
+</div>

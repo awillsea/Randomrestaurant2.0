@@ -1,6 +1,5 @@
+<div class=" flex flex-wrap justify-evenly">
 <app-userinput (sendEndPoint)="CreateUsersEndPoint($event)"></app-userinput>
-
-
 
 
 <!-- <div class="text-5xl text-center">
@@ -8,6 +7,7 @@ CAN YOU SEE ME
 </div> -->
 <div *ngIf="showWheel">
 <app-randomselection [theWinningIndex]="winningIndex" [listOfBiz]="listOfBusinesses" ></app-randomselection>
+</div>
 </div>
 <!-- <div *ngFor="let b of listOfBusinesses">
    

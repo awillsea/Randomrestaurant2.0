@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "IpGeolocation.IpGeolocation/1.0.10": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "compile": {
+          "lib/net6.0/IPGeolocation.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/IPGeolocation.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.9": {
         "type": "package",
         "dependencies": {
@@ -1433,6 +1449,19 @@
     }
   },
   "libraries": {
+    "IpGeolocation.IpGeolocation/1.0.10": {
+      "sha512": "XLMVS4IYJo2qY8obiFYMO8r+TeXOhmX/+MhlVzn+0xf5bTDkcZ+3QPQzSmrKDCedwzDfOckIz3mOIF9YZFx5cw==",
+      "type": "package",
+      "path": "ipgeolocation.ipgeolocation/1.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ipgeolocation.ipgeolocation.1.0.10.nupkg.sha512",
+        "ipgeolocation.ipgeolocation.nuspec",
+        "lib/net6.0/IPGeolocation.dll",
+        "lib/net6.0/IPGeolocation.runtimeconfig.json"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.9": {
       "sha512": "cuVhPjjNMSEFpKXweMNBbsG4RUFuuZpFBm8tSyw309U9JEjcnbB6n3EPb4xwgcy9bJ38ctIbv5G8zXUBhlrPWw==",
       "type": "package",
@@ -4906,6 +4935,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "IpGeolocation.IpGeolocation >= 1.0.10",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "Newtonsoft.Json >= 13.0.3",
       "Swashbuckle.AspNetCore >= 6.2.3",
@@ -4957,6 +4987,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "IpGeolocation.IpGeolocation": {
+            "target": "Package",
+            "version": "[1.0.10, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.9, )"

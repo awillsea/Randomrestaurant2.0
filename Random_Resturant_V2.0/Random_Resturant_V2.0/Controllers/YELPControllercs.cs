@@ -27,7 +27,7 @@ namespace Random_Resturant_V2._0.Controllers
             //return new YELP();
         }
         [HttpGet("{endPoint}")]
-        public YELP GetByFoodType( string endPoint )
+        public YELP GetByFoodType(string endPoint)
         {
             HttpClient web = Yelp_DAL.GetHttpClient();
 
@@ -35,15 +35,51 @@ namespace Random_Resturant_V2._0.Controllers
             YELP result = connection.Content.ReadAsAsync<YELP>().Result;
             YELP randomY = new YELP();
 
+            //https://api.yelp.com/v3/transactions/delivery/search?location=arizona&term=Pizza
 
 
             // results hold a class CALL YELP. That object holds a LIST of Buisnness objects
-            Console.WriteLine(result.Businesses[0].Location.Address1);
+            Console.WriteLine(result.Businesses[0].ReviewCount);
             // Results == YELP which has a list of object BUISNESS[].
             return result;
 
+
         }
-       
+
+
+        //[HttpGet("{endPoint}")]
+        //public YELP GetByFoodType(string endPoint)
+        //{
+        //    HttpClient web = Yelp_DAL.GetHttpClient();
+
+        //    var connection = web.GetAsync($"transactions/delivery/search?{endPoint}").Result;
+        //    YELP result = connection.Content.ReadAsAsync<YELP>().Result;
+        //    YELP randomY = new YELP();
+
+        //    //https://api.yelp.com/v3/transactions/delivery/search?location=arizona&term=Pizza
+
+
+        //    // results hold a class CALL YELP. That object holds a LIST of Buisnness objects
+        //    Console.WriteLine(result.Businesses[0].ReviewCount);
+        //    // Results == YELP which has a list of object BUISNESS[].
+        //    return result;
+
+
+        //}
+
+
+        [HttpGet("id/{id}")]
+        public YELP GetBusinessByID(string id)
+        {
+
+            HttpClient web = Yelp_DAL.GetHttpClient();
+
+
+            var connection = web.GetAsync($"businesses/{id}").Result;
+            YELP result = connection.Content.ReadAsAsync<YELP>().Result;
+            return result;
+        }
+
 
     }
 }

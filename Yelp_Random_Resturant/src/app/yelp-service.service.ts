@@ -24,14 +24,19 @@ export class YelpServiceService  {
   httpString:string = "https://api.yelp.com/v3/" ;
   azRestaurants: string = "businesses/search?location=az";
   
-  getRestaurant(){
-    return this.http.get<Yelpinfo>("https://api.yelp.com/v3/businesses/search?location=az");
-  }
-  GETALL(){
-    return this.http.get<Yelpinfo>("https://localhost:7174/yelp");
-  }
+  // getRestaurant(){
+  //   return this.http.get<Yelpinfo>("https://api.yelp.com/v3/businesses/search?location=az");
+  // }
+  // GETALL(){
+  //   return this.http.get<Yelpinfo>("https://localhost:7174/yelp");
+  // }
   GetByCategory(endPoint:string){
     return this.http.get<Yelpinfo>(`https://localhost:7174/yelp/${endPoint}`);
 
   }
+  GetBusinessInfo(businessID:number){
+    return this.http.get<Yelpinfo>(`https://localhost:7174/yelp/id/${businessID}`)
+  }
+
+  
 }

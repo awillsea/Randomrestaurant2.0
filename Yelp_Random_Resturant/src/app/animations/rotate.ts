@@ -13,7 +13,6 @@ import {
 import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 export let defaultDegree = 0;
 export let rotatedDegree = 0;
-import { rotatedDeg } from '../degree';
 import { Input } from '@angular/core';
 export const spinTheWheel = 
     trigger('spinTheWheel',[

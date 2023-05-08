@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lwkM7oqt3/cAA42uY9VcufnIhYZGLx07uK2bBd5iwQeFPe50bS0xv62u1njJnEt/WzKhWkFcg6YKfHC/mM/ipw==",
+  "dgSpecHash": "wwJgSTTGXIi7OMAIeKVo4n+gTcK9t6UYE17VjA7LFi6gerFGUy7VIrjy/SsxCyP9pG9R3K8xydAhBVLKDVfIAg==",
   "success": true,
   "projectFilePath": "C:\\Users\\alexa\\source\\repos\\RandomRestuarantApp\\Random_Resturant_V2.0\\Random_Resturant_V2.0\\Random_Resturant_V2.0.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\alexa\\.nuget\\packages\\ipgeolocation.ipgeolocation\\1.0.10\\ipgeolocation.ipgeolocation.1.0.10.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\alexa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

@@ -2,7 +2,7 @@
 
 <div [ngStyle]="{'filter':popupModalOpen ? 'blur(2px)' : 'none'}">
 
-<div class="  flex justify-center  place-items-center min-h-screen">
+<div class="  flex justify-center  place-items-center ">
 
 <div  class="container  relative w-96 h-96  flex  justify-center  place-items-center">
     <!-- <div class="w-32 h-16 absolute flex  z-10"> -->
@@ -22,18 +22,8 @@
 
 </div>
 </div>
-<ng-container *ngIf="popupModalOpen">
 
-<input checked={true} type="checkbox" id="my-modal" class="modal-toggle" />
-<div class="modal">
-  <div class="modal-box border-4 border-accent">
-    <div class=" text-lg text-primary-content text-center mt-6 " >
-        The Winner is! {{theRestaurant}}
-        </div>
-    <div class="modal-action">
-      <label for="my-modal" class="btn text-secondary" (click)="showWheel()">Yay!</label>
-    </div>
-  </div>
-</div>
+<ng-container *ngIf="popupModalOpen">
+<app-modal  [finalBizInfo]="winningBiz" (popupModalClosed)="emitListener($event)"></app-modal>
 </ng-container>
 

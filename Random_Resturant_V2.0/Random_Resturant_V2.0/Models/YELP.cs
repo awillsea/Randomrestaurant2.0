@@ -52,7 +52,7 @@ namespace Random_Resturant_V2._0.Models
         public Coordinates Coordinates { get; set; }
 
         [JsonProperty("transactions")]
-        public object[] Transactions { get; set; }
+        public string[] Transactions { get; set; }
 
         [JsonProperty("price")]
         public string Price { get; set; }

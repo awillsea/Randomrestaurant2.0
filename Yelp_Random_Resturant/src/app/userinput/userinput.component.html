@@ -1,5 +1,5 @@
-<!-- maybe figure out how to track their location instead?-->
 <!-- First Question Container for endpint.category-->
+
 <div class="form-control  flex flex-col place-items-center text-center">
     <div>
   Food Category
@@ -14,10 +14,15 @@
     />
   </label>
 </div>
-  <!-- <button type="submit" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addCategories()">Submit</button> -->
   <br />
-<div>
+
+<div *ngIf="!useClientsIP" class="text-center">
+  <div>
   Location
+</div>
+  <div class="tooltip tooltip-right" data-tip="give us permission to use your location?">
+    <button class="btn" (click)="useClientsLocation()">Use Location</button>
+  </div>
   <label class="label" for="location">
     <input
       id="location"
@@ -26,8 +31,37 @@
       placeholder="San Diego/Arizona/NY"
       class="input input-bordered input-primary w-full max-w-xs text-center"
     />
+    
   </label>
+  
 </div>
+<div *ngIf="useClientsIP">
+  Location
+  <label class="label" for="location">
+    <input
+      id="location"
+      [value]="city"
+      type="text"
+      placeholder="San Diego/Arizona/NY"
+      class="input input-bordered input-primary w-full max-w-xs text-center"
+    />
+  </label>
+
+</div>
+
+
+<!-- Come Back for this, just need to add APIENDPOINT senario for array of price points inside restaurant component-->
+<!-- <select [(ngModel)]="selectedPrice" class="select select-primary w-min max-w-xs">
+ 
+  <option [value]="0" disabled selected>Price</option>
+  <option>$</option>
+  <option>$$</option>
+  <option>$$$</option>
+  <option>$$$$</option>
+
+</select> -->
+
+
   <!-- <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg" (click)="addLocation()">Submit</button> -->
   <br />
   <!-- <button class="btn bg-warning">Button</button> -->
@@ -38,4 +72,4 @@
     Submit
   </button>
 </div>
-<!-- <app-randomselection></app-randomselection> -->
+

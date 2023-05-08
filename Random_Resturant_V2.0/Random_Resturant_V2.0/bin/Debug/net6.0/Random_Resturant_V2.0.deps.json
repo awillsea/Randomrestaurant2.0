@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "Random_Resturant_V2.0/1.0.0": {
         "dependencies": {
+          "IpGeolocation.IpGeolocation": "1.0.10",
           "Microsoft.AspNet.WebApi.Client": "5.2.9",
           "Newtonsoft.Json": "13.0.3",
           "Swashbuckle.AspNetCore": "6.2.3",
@@ -15,6 +16,17 @@
         },
         "runtime": {
           "Random_Resturant_V2.0.dll": {}
+        }
+      },
+      "IpGeolocation.IpGeolocation/1.0.10": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net6.0/IPGeolocation.dll": {
+            "assemblyVersion": "1.0.10.0",
+            "fileVersion": "1.0.10.0"
+          }
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.9": {
@@ -780,6 +792,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "IpGeolocation.IpGeolocation/1.0.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XLMVS4IYJo2qY8obiFYMO8r+TeXOhmX/+MhlVzn+0xf5bTDkcZ+3QPQzSmrKDCedwzDfOckIz3mOIF9YZFx5cw==",
+      "path": "ipgeolocation.ipgeolocation/1.0.10",
+      "hashPath": "ipgeolocation.ipgeolocation.1.0.10.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Client/5.2.9": {
       "type": "package",

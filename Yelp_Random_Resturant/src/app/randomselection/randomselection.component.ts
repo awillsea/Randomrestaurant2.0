@@ -4,7 +4,6 @@ import {  spinTheWheel,  } from '../animations/rotate';
 import { fade } from '../animations/fadeAnimation';
 import { AnimationMetadataType, style } from '@angular/animations';
 import { defaultDegree,rotatedDegree } from '../animations/rotate';
-import { rotatedDeg } from '../degree';
 import { Subject, interval, window } from 'rxjs';
 
 
@@ -56,11 +55,12 @@ spinButtonCounter:number = 0;
 
 
 rotate() {
-console.log(this.winningDeg)
-console.log(this.state)
+this.listOfBiz.forEach(b => {
+  console.log(b.name)
+  console.log(b.reviewCount)
 
-console.log(this.state)
-console.log(this.spinButtonCounter)
+  
+});
 if(this.state === 'default' && this.spinButtonCounter > 0 ){
   let randomNum = Math.floor(Math.random() * 20)
   this.theWinningIndex = randomNum;
@@ -80,12 +80,37 @@ animStart(){
 console.log('start')
 console.log(`this is hopefully the degree of the winner ${this.listOfBiz[this.theWinningIndex].name} ${this.winningDeg}`) 
 
+
 }
 popupModalOpen:boolean = false;
 // checked:boolean = true;
+winningBiz:Business = {
+  id: "",
+  name: "",
+  imageUrl: "",
+  is_closed: false,
+  url: "",
+  reviewCount: 0,
+  categories: [],
+  rating: 0,
+  transactions: [],
+  price: "",
+  phone: "",
+  display_phone: "",
+  distance: 0,
+}
+
+// @Output() updateStars:EventEmitter<number> = new EventEmitter<number>()
+starRating:number = 0
 animEnd(){
   this.theRestaurant = this.listOfBiz[this.theWinningIndex].name;
-console.log('end')
+  this.winningBiz = this.listOfBiz[this.theWinningIndex]
+  // this.starRating = Array(4);
+  console.log(this.winningBiz.transactions[0] + this.winningBiz.transactions[1] )
+  console.log('end')
+  this.starRating = this.winningBiz.rating;
+  console.log(this.starRating)
+  // this.updateStars.emit(this.winningBiz.rating)
 if(this.state === 'rotated'){
 let delayPopupModal = setTimeout(()=>{
   this.popupModalOpen = true;
@@ -93,6 +118,7 @@ let delayPopupModal = setTimeout(()=>{
 clearInterval(delayPopupModal);
 
 },900)
+
 }else{
   console.log('modal no show up ')
 }
@@ -102,6 +128,8 @@ let delaySpinButtonState = setTimeout(()=>{
 
 },1000)
 
+
+
 }
 showWheel(){
   
@@ -110,9 +138,19 @@ showWheel(){
 
 }
 
+starIndexHasRating:boolean = false;
+starValueIsWhole:boolean = false;
+remainingStarValue:number[] =[]
+starIDNum:number = 0;
 
+
+
+emitListener(event:boolean){
+  this.popupModalOpen = !event;
 }
 
 
 
 
+
+}

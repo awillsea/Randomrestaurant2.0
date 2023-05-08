@@ -21,6 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingheroComponent } from './landinghero/landinghero.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { HomeComponent } from './home/home.component';
     LandingheroComponent,
     NavbarComponent,
     HomeComponent,
+    ModalComponent,
   ],
   imports: [
     BrowserModule,
