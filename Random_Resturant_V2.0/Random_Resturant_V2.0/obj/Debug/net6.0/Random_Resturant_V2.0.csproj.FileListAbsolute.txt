@@ -71,3 +71,16 @@ C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Res
 C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\obj\Debug\net6.0\Random_Resturant_V2.0.genruntimeconfig.cache
 C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\obj\Debug\net6.0\ref\Random_Resturant_V2.0.dll
 C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\IPGeolocation.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.APIGatewayEvents.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.ApplicationLoadBalancerEvents.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.AspNetCoreServer.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.AspNetCoreServer.Hosting.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.Core.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.Logging.AspNetCore.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.RuntimeSupport.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\Amazon.Lambda.Serialization.SystemTextJson.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\NgrokAspNetCore.Lib.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\System.Web.Cors.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\System.Web.Http.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\System.Web.Http.Cors.dll
+C:\Users\alexa\source\repos\RandomRestuarantApp\Random_Resturant_V2.0\Random_Resturant_V2.0\bin\Debug\net6.0\libman.json

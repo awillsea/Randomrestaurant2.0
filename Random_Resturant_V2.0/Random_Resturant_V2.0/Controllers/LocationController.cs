@@ -10,11 +10,10 @@ namespace Random_Resturant_V2._0.Controllers
     [ApiController]
     public class LocationController : Controller
     {
-        [HttpGet]
-        async public Task<IpGeoLocationAapi> getLocation()
+        [HttpGet("{clientIP}")]
+        async public Task<IpGeoLocationAapi> getLocation(string clientsIP)
         {
-            string clientsIPAddress = "ip?ip=68.226.20.171";
-            IpGeoLocationAapi results = await Location_DAL.GetHttpClient(clientsIPAddress);
+            IpGeoLocationAapi results = await Location_DAL.GetHttpClient(clientsIP);
 
             return results;
         }

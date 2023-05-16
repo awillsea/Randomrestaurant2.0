@@ -28,10 +28,12 @@ export class YelpServiceService  {
   //   return this.http.get<Yelpinfo>("https://api.yelp.com/v3/businesses/search?location=az");
   // }
   // GETALL(){
-  //   return this.http.get<Yelpinfo>("https://localhost:7174/yelp");
+  //   return this.http.get<Yelpinfo>("https://e0dc-2600-8800-171c-b500-956d-289a-68ac-b664.ngrok-free.app/yelp");
   // }
   GetByCategory(endPoint:string){
-    return this.http.get<Yelpinfo>(`https://localhost:7174/yelp/${endPoint}`);
+
+     return this.http.get<Yelpinfo>(`http://localhost:5089/yelp/${endPoint}`);
+
 
   }
   GetBusinessInfo(businessID:number){

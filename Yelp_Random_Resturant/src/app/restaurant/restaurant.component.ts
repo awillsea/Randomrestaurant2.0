@@ -99,7 +99,6 @@ ip:string = '';
   }
 
   getRandomRestaurant(apiendpoint:string){
-    
     if(apiendpoint === "" ){
     console.log("Inside IF statement")
     this.yelpSubscription = this.YelpSrv.GetByCategory(`location=az&categories=mexican`).subscribe(result=>{
@@ -111,6 +110,7 @@ ip:string = '';
   }
   else {
     this.yelpSubscription = this.YelpSrv.GetByCategory(this.APIEndPoint).subscribe(result=>{
+      console.log(XPathResult)
       console.log(result);
       this.YelpInfo = result;
       this.batchOfBusinesses = this.YelpInfo.businesses;
